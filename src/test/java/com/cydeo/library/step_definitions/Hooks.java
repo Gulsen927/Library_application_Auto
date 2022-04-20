@@ -39,10 +39,12 @@ public class Hooks {
     @Before("@db")
     @Given("Establish the database connection")
     public void setUpDB() {
+        String dbUrl=ConfigurationReader.getProperty("DB_url");
+        String  dbUserName=ConfigurationReader.getProperty("Username");
+        String dbPassword=ConfigurationReader.getProperty("Password");
 
-        DB_Util.createConnection(ConfigurationReader.getProperty("DB_url"),
-                ConfigurationReader.getProperty("Username"),ConfigurationReader.getProperty("Password"));
-        System.out.println("CONNECTING DATABASE......");
+        DB_Util.createConnection(dbUrl,dbUserName,dbPassword);
+
 
     }
 

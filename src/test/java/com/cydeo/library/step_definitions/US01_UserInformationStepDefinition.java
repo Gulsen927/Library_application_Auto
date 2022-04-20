@@ -9,22 +9,25 @@ import java.util.List;
 
 public class US01_UserInformationStepDefinition {
 
+    int allIdCount;
+
 
     @When("Execute query to get all IDs from users")
     public void execute_query_to_get_all_i_ds_from_users() {
+        DB_Util.runQuery("select count(id) from users");
+        allIdCount = Integer.parseInt(DB_Util.getFirstRowFirstColumn());
 
-        DB_Util.runQuery("select count(distinct id) from users");
 
     }
 
     @Then("verify all users has unique ID")
     public void verify_all_users_has_unique_id() {
 
-        int actualIdCount = 141;
 
+        DB_Util.runQuery("select count(distinct id) from users");
         int expectedIdCount = Integer.parseInt(DB_Util.getFirstRowFirstColumn());
 
-        Assert.assertEquals(expectedIdCount,actualIdCount);
+        Assert.assertEquals(allIdCount,expectedIdCount);
 
 
     }
@@ -32,7 +35,7 @@ public class US01_UserInformationStepDefinition {
 
     @When("Execute query to get all columns")
     public void execute_query_to_get_all_columns() {
-     DB_Util.runQuery("select * from users");
+        DB_Util.runQuery("select * from users");
 
 
     }

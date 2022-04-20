@@ -32,6 +32,7 @@ public class US02_BorrowedBooksInformationStepDefinition {
          expectedBorrowedBooks = DB_Util.getFirstRowFirstColumn();
         Assert.assertEquals(expectedBorrowedBooks,actualBorrowedBooks);
 
+
     }
 
 }

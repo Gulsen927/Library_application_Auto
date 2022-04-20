@@ -1,4 +1,4 @@
-@wip
+
 Feature: As a data consumer, I want UI and DB book categories match.
 @db
   Scenario: verify book categories with DB
