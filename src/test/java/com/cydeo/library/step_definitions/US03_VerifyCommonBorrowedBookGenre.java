@@ -7,7 +7,7 @@ import org.junit.Assert;
 
 public class US03_VerifyCommonBorrowedBookGenre {
 
-    String  expectedBookGenre;
+    String   actualBookGenre;
 
     @When("I execute a query to find the most popular book genre")
     public void i_execute_a_query_to_find_the_most_popular_book_genre() {
@@ -17,13 +17,13 @@ public class US03_VerifyCommonBorrowedBookGenre {
                 "group by name order by 2 desc");
 
 
-        expectedBookGenre = DB_Util.getFirstRowFirstColumn();
+        actualBookGenre = DB_Util.getFirstRowFirstColumn();
 
     }
 
     @Then("verify that {string} is the most popular book genre.")
     public void verify_that_is_the_most_popular_book_genre(String expectedBookGenre) {
-        String actualBookGenre= "Classic";
+
 
         Assert.assertEquals(expectedBookGenre,actualBookGenre);
 
