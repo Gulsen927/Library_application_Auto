@@ -1,4 +1,4 @@
-@wip
+@wip @smoke
 Feature: As a librarian, I want to know the genre of books are being borrowed the most
  @db
   Scenario: verify the common book genre that’s being borrowed

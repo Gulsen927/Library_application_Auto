@@ -1,10 +1,9 @@
-
 @smoke
-Feature:As a librarian, I want to know the amount of borrowed books
+Feature: Default
 
-@db
-  Scenario: verify the amount of borrowed books
-
+	#test 27 
+    @TL-105 @db
+    Scenario: connection test27
     Given I am in the homepage of the library app
     When I take borrowed books number
     Then borrowed books number information must match with DB

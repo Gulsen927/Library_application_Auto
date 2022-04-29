@@ -1,5 +1,5 @@
 
-
+@smoke
 Feature: As a librarian, I want to know who is the most popular user
   @db
   Scenario: verify who is the most popular user who reads the most

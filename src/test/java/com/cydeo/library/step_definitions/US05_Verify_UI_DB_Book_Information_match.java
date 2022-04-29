@@ -61,10 +61,15 @@ public class US05_Verify_UI_DB_Book_Information_match {
 
             Assert.assertEquals(expectedBookInformation.get(i),actualBookInformation.get(i));
 
+
         }
 
 
+
+
     }
+
+
 
 
 }
